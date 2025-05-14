@@ -1,0 +1,7 @@
+fastapi
+json
+os
+dotenv
+openai
+fastapi
+pydantic
