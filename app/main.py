@@ -4,6 +4,9 @@ from routers.nover_router import router as novel_router
 app = FastAPI()
 app.include_router(novel_router, prefix="/novel")
 
+@app.get("/")
+async def root():
+    return("Root")
 
 if __name__ == "__main__":
     import uvicorn
