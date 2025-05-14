@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers.nover_router import router as novel_router
+from app.routers.nover_router import router as novel_router
 
 app = FastAPI()
 app.include_router(novel_router, prefix="/novel")

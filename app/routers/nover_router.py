@@ -5,7 +5,7 @@ from openai import OpenAI
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from prompts import create_novel_ua, create_novel_eng
+from app.prompts import create_novel_ua, create_novel_eng
 
 
 class Response(BaseModel):
