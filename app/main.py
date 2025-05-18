@@ -7,7 +7,7 @@ app = FastAPI()
 app.include_router(novel_router, prefix="/novel")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Або конкретні домени: ["http://localhost:3000"]
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )

@@ -5,7 +5,7 @@ from openai import OpenAI
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from app.prompts import create_novel_ua, create_novel_eng
+from app.prompts import create_novel_ua, create_novel_eng, get_image_promt
 
 
 class Response(BaseModel):
@@ -47,8 +47,8 @@ async def create_novel(lang: str = "Eng"):
     response = json.loads(response.choices[0].message.content)
 
     image = client.images.generate(
-        model="dall-e-2",
-        prompt = f"Create a vibrant cartoon-style illustration for a children's story. Use exaggerated, expressive characters with bold outlines and bright, playful colors. Style references: Disney/Pixar concept art, classic storybook illustrations. Avoid 3D rendering - maintain flat 2D appearance with depth suggested through perspective. Story:{response['illustration']}",
+        model="dall-e-3",
+        prompt = get_image_promt(response['illustration']),
         size="1024x1024",
         n=1,
     )

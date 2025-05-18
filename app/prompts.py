@@ -13,6 +13,7 @@ create_novel_ua = f"""
 - Написати **опис для ілюстрації** (без стилю, лише сцена: "Хлопчик з собакою в парку, собака несподівано знаходить м’яч під кущем").  
 - Не використовувати ніяке форматування тексту 
 
+
 **Зразок відповіді:**  
 Текст:  
 "Сашко грав у саду, коли побачив, що його улюблений м’яч зник. Він оббіг усі кущі, але нічого не знайшов. Раптом його пес Барсік почав гавкати під яблунею. Сашко підбіг і побачив м’яч, застряглий між гілками. Він витягнув його, обійняв Барсіка й засміявся: «Ти найкращий детектив!»"  
@@ -53,3 +54,13 @@ Question: What emotion did Sashko feel when he found the ball?
 Explanation: He didn’t expect the dog to help and felt relieved.  
 Illustration: A boy in a garden holding a ball, dog barking at an apple tree, branches shaking.  
 """  
+
+def get_image_promt(your_description: str):
+    return f"""
+Vintage children's book illustration style: soft watercolor textures, pastel tones,
+round cute characters with hand-drawn outlines. Stylized background with light layering
+(trees, clouds). Style reference: Eric Carle, Soviet fairy tales from the 1970s.
+No 3D, only warm hand-drawn graphics.
+
+Scene: {your_description}.
+"""
